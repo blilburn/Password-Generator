@@ -16,14 +16,8 @@ function writePassword() {
 /*let confirmSpecialCharacters = confirm("Do you want to use special characters?")*/
 
 
-  /*move these arrays to the inside of the function*/
-let alphaLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+/*move these arrays to the inside of the function*/
 
-let alphaUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
-let number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
-let specialChar = ["/", "+", ",", "<", ">", "!", "~", "-", "?", ".", "*", "%", "&"];
 
 /**
  * generate a password based on certain criteria
@@ -31,9 +25,16 @@ let specialChar = ["/", "+", ",", "<", ">", "!", "~", "-", "?", ".", "*", "%", "
 function generatePassword() {
 
   // Password is currently blank! We need to make a better one
-  
-  /*I added [] to this to make it an array. This might not have worked. You can change it back to ()*/
+
   let password = [];
+
+  let alphaLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+  let alphaUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+  let number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+  let specialChar = ["/", "+", ",", "<", ">", "!", "~", "-", "?", ".", "*", "%", "&"];
 
   let passwordLength = prompt("How long do you want your password to be:");
 
@@ -63,10 +64,8 @@ function generatePassword() {
     confirmSpecialCharacters = confirm("Do you want to use special characters?")
   }
 
-  /*let passwordChar = []*/
-
   if (confirmSpecialCharacters) {
-     /*password is a string. SpecialChar is an array. Change password to an array and name PasswordOptions*/
+    
     password = password.concat(specialChar)
   }
 
@@ -90,8 +89,8 @@ function generatePassword() {
     passwordRandom = passwordRandom + password[Math.floor(Math.random() * password.length)];
     console.log(passwordRandom);
   }
-  /*if you don't change to password options above then change return password to passwordRandom or may passwordOptions?*/
-  return password;
+  
+  return passwordRandom;
 }
 
 // Main Process
